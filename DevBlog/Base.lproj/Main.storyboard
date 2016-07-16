@@ -74,12 +74,15 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Gl-I8o" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="43" width="420" height="33"/>
+                                                <rect key="frame" x="100" y="44" width="420" height="33"/>
                                                 <color key="backgroundColor" red="0.17647058823529413" green="0.2627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                                 <state key="normal" title="Facebook Login">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnFBLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZWz-Do-waH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
