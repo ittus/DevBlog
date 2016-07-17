@@ -49,6 +49,9 @@ class ViewController: UIViewController {
                         print("Login error \(errorEntity)")
                     } else {
                         print("Login success \(user)")
+                        
+                        let userData = ["provider": "facebook", "blah": "test"]
+                        DataService.ds.createFirebaseUser(user!.uid, user: userData)
                         NSUserDefaults.standardUserDefaults().setValue(user?.uid, forKey: KEY_UID)
                         self.performSegueWithIdentifier(SEGUE_LOGIN, sender: nil)
                     }
@@ -68,6 +71,10 @@ class ViewController: UIViewController {
                             } else {
                                 NSUserDefaults.standardUserDefaults().setValue(createUser?.uid, forKey: KEY_UID)
                                 FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: nil)
+                                FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (loginUser: FIRUser?, loginError: NSError?) in
+                                    let userData = ["provider": "password", "blah": "test2"]
+                                    DataService.ds.createFirebaseUser(loginUser!.uid, user: userData)
+                                })
                                 self.performSegueWithIdentifier(SEGUE_LOGIN, sender: nil)
                             }
                         })

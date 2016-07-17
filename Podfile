@@ -6,6 +6,7 @@ target 'DevBlog' do
   use_frameworks!
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   # Pods for DevBlog
 
 end

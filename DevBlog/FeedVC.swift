@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -16,6 +17,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        DataService.ds.REF_POSTS.observeEventType(FIRDataEventType.Value) { (snapshot) in
+            print(snapshot.value)
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
