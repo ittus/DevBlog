@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D20CFC41D3B29B20065ED9A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20CFC31D3B29B20065ED9A /* DataService.swift */; };
+		0D20CFC61D3B2B920065ED9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D20CFC51D3B2B920065ED9A /* GoogleService-Info.plist */; };
 		0D6CAA5A1D3A34E400846C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CAA591D3A34E400846C50 /* AppDelegate.swift */; };
 		0D6CAA5C1D3A34E400846C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CAA5B1D3A34E400846C50 /* ViewController.swift */; };
 		0D6CAA5F1D3A34E400846C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CAA5D1D3A34E400846C50 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		074F8248C7497055565261DA /* Pods_DevBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D20CFC31D3B29B20065ED9A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		0D20CFC51D3B2B920065ED9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D6CAA561D3A34E400846C50 /* DevBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CAA591D3A34E400846C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6CAA5B1D3A34E400846C50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D20CFC21D3B29A10065ED9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D20CFC31D3B29B20065ED9A /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		0D6CAA4D1D3A34E400846C50 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 		0D6CAA581D3A34E400846C50 /* DevBlog */ = {
 			isa = PBXGroup;
 			children = (
+				0D20CFC21D3B29A10065ED9A /* Services */,
 				0D6CAA801D3A49F700846C50 /* Frameworks */,
 				0D6CAA791D3A3E7800846C50 /* Util */,
 				0D6CAA6E1D3A3ACB00846C50 /* Resources */,
@@ -98,6 +111,7 @@
 				0D6CAA601D3A34E400846C50 /* Assets.xcassets */,
 				0D6CAA621D3A34E400846C50 /* LaunchScreen.storyboard */,
 				0D6CAA651D3A34E400846C50 /* Info.plist */,
+				0D20CFC51D3B2B920065ED9A /* GoogleService-Info.plist */,
 			);
 			path = DevBlog;
 			sourceTree = "<group>";
@@ -234,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6CAA731D3A3AE700846C50 /* NotoSans-Bold.ttf in Resources */,
+				0D20CFC61D3B2B920065ED9A /* GoogleService-Info.plist in Resources */,
 				0D6CAA641D3A34E400846C50 /* LaunchScreen.storyboard in Resources */,
 				0D6CAA741D3A3AE700846C50 /* NotoSans-BoldItalic.ttf in Resources */,
 				0D6CAA751D3A3AE700846C50 /* NotoSans-Italic.ttf in Resources */,
@@ -299,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6CAA7F1D3A453800846C50 /* MaterialTextField.swift in Sources */,
+				0D20CFC41D3B29B20065ED9A /* DataService.swift in Sources */,
 				0D6CAA781D3A3E4D00846C50 /* MaterialView.swift in Sources */,
 				0D6CAA5C1D3A34E400846C50 /* ViewController.swift in Sources */,
 				0D6CAA5A1D3A34E400846C50 /* AppDelegate.swift in Sources */,

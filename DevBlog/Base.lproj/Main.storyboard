@@ -135,7 +135,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEd-4t-55V" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
                                         <rect key="frame" x="155" y="174" width="250" height="33"/>
@@ -148,6 +148,9 @@
                                         <state key="normal" title="Login / Signup">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8V-PC-7Sq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,10 +196,33 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="c1K-Fo-Kx5" id="3QO-tK-FmW"/>
+                        <outlet property="passwordField" destination="5gE-Rp-c2X" id="0kg-dz-Xbh"/>
+                        <segue destination="mM3-Sv-0Sm" kind="show" identifier="loggedIn" id="dcB-Ic-2S1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kTY-Ri-qtq">
+            <objects>
+                <viewController id="mM3-Sv-0Sm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gon-lF-gL4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Arx-Zd-I3i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SNt-LF-r5v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xam-da-JFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="429"/>
         </scene>
     </scenes>
     <resources>
