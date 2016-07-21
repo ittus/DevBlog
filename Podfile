@@ -7,6 +7,7 @@ target 'DevBlog' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Alamofire', '~> 3.4'
   # Pods for DevBlog
 
 end

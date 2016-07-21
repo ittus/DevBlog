@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var showcaseImage: UIImageView!
+    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var likesLbl: UILabel!
+    
+    var post: Post!
+    var request: Request?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +30,32 @@ class PostCell: UITableViewCell {
         showcaseImage.clipsToBounds = true
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func configureCell(post: Post, img: UIImage?) {
+        self.post = post
+        
+        self.descriptionText.text = post.postDescription
+        self.likesLbl.text = "\(post.likes)"
+        
+        if post.imageUrl != nil {
+            self.showcaseImage.hidden = false
+            if img != nil {
+                self.showcaseImage.image = img
+            } else {
+                request = Alamofire.request(.GET, post.imageUrl!).validate(contentType: ["image/*"]).response(completionHandler: { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, err: NSError?) in
+                    if err == nil {
+                        let img = UIImage(data: data!)!
+                        self.showcaseImage.image = img
+                        FeedVC.imageCache.setObject(img, forKey: self.post.imageUrl!)
+                        
+                        
+                    } else {
+                        print(err.debugDescription)
+                    }
+                });
+            }
+        } else {
+            self.showcaseImage.hidden = true
+        }
+        
     }
 }

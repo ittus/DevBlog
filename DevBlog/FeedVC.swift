@@ -12,12 +12,15 @@ import Firebase
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
+    static var imageCache = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 393
         
         DataService.ds.REF_POSTS.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             print(snapshot.value)
@@ -48,6 +51,29 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let post = posts[indexPath.row]
         print(post.postDescription)
-        return tableView.dequeueReusableCellWithIdentifier("postCell") as! PostCell
+        if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostCell {
+            
+            cell.request?.cancel()
+            
+            var img: UIImage?
+            
+            if let url = post.imageUrl {
+                img = FeedVC.imageCache.objectForKey(url) as? UIImage
+            }
+            cell.configureCell(post, img: img)
+            return cell
+        } else {
+            return PostCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let post = posts[indexPath.row]
+        
+        if post.imageUrl == nil {
+            return 200
+        } else {
+            return tableView.estimatedRowHeight
+        }
     }
 }
