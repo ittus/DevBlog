@@ -13,8 +13,10 @@
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
@@ -76,7 +78,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="qHb-4Q-Y71"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Gl-I8o" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Gl-I8o" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="44" width="420" height="33"/>
                                                 <color key="backgroundColor" red="0.17647058823529413" green="0.2627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
@@ -221,12 +223,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-5g-gNl" customClass="MaterialView" customModule="DevBlog" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="560" height="62"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-nM-akb">
+                                        <rect key="frame" x="8" y="8" width="544" height="46"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Update your status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-hk-u0h" customClass="MaterialTextField" customModule="DevBlog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="428" height="46"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Ke0-4z-uSl">
+                                                <rect key="frame" x="438" y="0.0" width="46" height="46"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="46" id="ESv-c6-jD9"/>
+                                                    <constraint firstAttribute="width" constant="46" id="kdi-Bd-W43"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="vSd-mz-nfq" appends="YES" id="sjx-pJ-ut4"/>
+                                                </connections>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyb-HP-ez2" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
+                                                <rect key="frame" x="494" y="0.0" width="50" height="46"/>
+                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="RI3-jT-K3J"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="postButtonPressed:" destination="mM3-Sv-0Sm" eventType="touchUpInside" id="Cl6-gT-bhA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4z2-nM-akb" firstAttribute="top" secondItem="Gvg-5g-gNl" secondAttribute="topMargin" id="692-wY-cav"/>
+                                    <constraint firstItem="4z2-nM-akb" firstAttribute="leading" secondItem="Gvg-5g-gNl" secondAttribute="leadingMargin" id="HwK-Gg-ID9"/>
+                                    <constraint firstAttribute="height" constant="62" id="SRp-sQ-8C2"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="4z2-nM-akb" secondAttribute="bottom" id="gl4-vO-tt4"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="4z2-nM-akb" secondAttribute="trailing" id="lIc-3S-V7B"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="393" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2fV-pN-TDk">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="20" y="134" width="560" height="466"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="393" id="TmG-IQ-QGS" customClass="PostCell" customModule="DevBlog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="393"/>
+                                        <rect key="frame" x="0.0" y="28" width="560" height="393"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TmG-IQ-QGS" id="bDJ-02-Lpa">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="393"/>
@@ -332,17 +383,33 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Arx-Zd-I3i" firstAttribute="top" secondItem="2fV-pN-TDk" secondAttribute="bottom" id="316-Xj-WxE"/>
+                            <constraint firstItem="Gvg-5g-gNl" firstAttribute="leading" secondItem="SNt-LF-r5v" secondAttribute="leadingMargin" id="5NY-dz-wsz"/>
                             <constraint firstItem="2fV-pN-TDk" firstAttribute="trailing" secondItem="SNt-LF-r5v" secondAttribute="trailingMargin" id="7SC-Nr-SFX"/>
+                            <constraint firstItem="2fV-pN-TDk" firstAttribute="top" secondItem="Gvg-5g-gNl" secondAttribute="bottom" constant="8" id="94C-4F-78O"/>
                             <constraint firstItem="2fV-pN-TDk" firstAttribute="top" secondItem="Gon-lF-gL4" secondAttribute="bottom" id="9W6-Tp-vik"/>
+                            <constraint firstItem="Gvg-5g-gNl" firstAttribute="trailing" secondItem="SNt-LF-r5v" secondAttribute="trailingMargin" id="eRU-NC-4hF"/>
                             <constraint firstItem="2fV-pN-TDk" firstAttribute="leading" secondItem="SNt-LF-r5v" secondAttribute="leadingMargin" id="hrE-r4-ht9"/>
+                            <constraint firstItem="Gvg-5g-gNl" firstAttribute="top" secondItem="Gon-lF-gL4" secondAttribute="bottom" id="pZV-2w-Lkz"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9W6-Tp-vik"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="XwD-W3-R6g"/>
                     <connections>
+                        <outlet property="ivImageSelected" destination="Ke0-4z-uSl" id="RJr-00-M5m"/>
                         <outlet property="tableView" destination="2fV-pN-TDk" id="376-mm-mF1"/>
+                        <outlet property="txtPOst" destination="DEn-hk-u0h" id="gIi-Ul-Kmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xam-da-JFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vSd-mz-nfq">
+                    <connections>
+                        <action selector="selectImageTap:" destination="mM3-Sv-0Sm" id="soo-QV-Q91"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1838" y="429"/>
         </scene>
@@ -367,6 +434,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="50" height="50"/>
         <image name="facebook-icon" width="361" height="360"/>
         <image name="heart-empty" width="150" height="147"/>
         <image name="logo" width="256" height="256"/>
