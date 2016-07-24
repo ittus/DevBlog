@@ -106,7 +106,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 let urlStr = "https://post.imageshack.us/upload_api.php"
                 let url = NSURL(string: urlStr)!
                 let imgData = UIImageJPEGRepresentation(img, 0.2)!
-
                 let keyData = ""
                 .dataUsingEncoding(NSUTF8StringEncoding)!
                 

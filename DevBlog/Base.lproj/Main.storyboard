@@ -78,7 +78,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="qHb-4Q-Y71"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Gl-I8o" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Gl-I8o" customClass="MaterialButton" customModule="DevBlog" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="44" width="420" height="33"/>
                                                 <color key="backgroundColor" red="0.17647058823529413" green="0.2627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
@@ -372,6 +372,7 @@
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="descriptionText" destination="yx6-70-5nN" id="Jc0-hd-6Sp"/>
+                                            <outlet property="ivLike" destination="aFa-XI-rIx" id="N8q-C8-Hc0"/>
                                             <outlet property="likesLbl" destination="ACE-17-9AY" id="keE-5H-2V4"/>
                                             <outlet property="profileImg" destination="Gr5-Zj-lEk" id="8YP-gU-tse"/>
                                             <outlet property="showcaseImage" destination="KSZ-ZJ-e4v" id="Vi3-6r-iQ9"/>
